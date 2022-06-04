@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+    router: {
+        base: '/pg-nuxt/'
+    }
+} : {}
+
 module.exports = {
     server: {
         port: 3000,
@@ -8,15 +14,7 @@ module.exports = {
             poll: true
         }
     },
-}
-
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-    router: {
-        base: '/pg-nuxt/'
-    }
-} : {}
-
-export default {
+    routerBase,
     head: {
         title: 'Nuxt.js Test Site',
         meta: [
@@ -31,5 +29,4 @@ export default {
         link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }]
     },
     target: 'static',
-    ...routerBase
 }
