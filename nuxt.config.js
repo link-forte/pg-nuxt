@@ -31,5 +31,5 @@ export default {
         link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }]
     },
     target: 'static',
-    routerBase
+    ...routerBase
 }
